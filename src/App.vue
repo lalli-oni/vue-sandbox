@@ -24,12 +24,10 @@ const fetchData = async () => {
 </script>
 
 <template>
-  <div>
-    <h1>{{ PAGE_TITLE }}</h1>
-    <button @click="fetchData">Fetch Data</button>
-    <div v-if="isLoading">Loading...</div>
-    <ul>
-      <li v-for="item in data" :key="item.id">{{ item.name }}</li>
-    </ul>
-  </div>
+  <h1>{{ PAGE_TITLE }}</h1>
+  <button @click="fetchData">Fetch Data</button>
+  <div v-if="isLoading">Loading...</div>
+  <ul>
+    <li v-for="item in data" :key="item.id">{{ item.name }}</li>
+  </ul>
 </template>
