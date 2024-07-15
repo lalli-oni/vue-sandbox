@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { type Ref, ref } from "vue";
 import axios from "axios";
+
+import { User } from "./types/user";
 
 const pageTitle = "Data Fetching Example";
 let isLoading = ref(false);
-let data = ref([]);
+let data: Ref<Array<User>> = ref([]);
 
 const fetchData = async () => {
   try {
