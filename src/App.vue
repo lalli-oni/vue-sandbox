@@ -5,6 +5,7 @@ import axios from "axios";
 import { User } from "./types/user";
 
 const PAGE_TITLE = "Data Fetching Example";
+const API_HOSTNAME = "https://api.example.com";
 
 let isLoading: Ref<boolean> = ref(false);
 let data: Reactive<Array<User>> = reactive([]);
@@ -12,7 +13,7 @@ let data: Reactive<Array<User>> = reactive([]);
 const fetchData = async () => {
   try {
     isLoading.value = true;
-    const response = await axios.get("https://api.example.com/data");
+    const response = await axios.get(API_HOSTNAME + "/data");
     data = response.data;
   } catch (error) {
     console.error("Error fetching data:", error);
