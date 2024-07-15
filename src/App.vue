@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { type Ref, ref } from "vue";
+import { type Reactive, reactive, type Ref, ref } from "vue";
 import axios from "axios";
 
 import { User } from "./types/user";
 
 const pageTitle = "Data Fetching Example";
 let isLoading = ref(false);
-let data: Ref<Array<User>> = ref([]);
+let data: Reactive<Array<User>> = reactive([]);
 
 const fetchData = async () => {
   try {
