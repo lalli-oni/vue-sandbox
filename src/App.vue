@@ -3,8 +3,8 @@ import { ref } from "vue";
 import axios from "axios";
 
 const pageTitle = "Data Fetching Example";
-const isLoading = ref(false);
-const data = ref([]);
+let isLoading = ref(false);
+let data = ref([]);
 
 const fetchData = async () => {
   try {
