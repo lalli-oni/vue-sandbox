@@ -7,7 +7,7 @@ import { User } from "./types/user";
 const PAGE_TITLE = "Data Fetching Example";
 const API_HOSTNAME = "https://api.example.com";
 
-let isLoading: Ref<boolean> = ref(false);
+const isLoading: Ref<boolean> = ref(false);
 let data: Reactive<Array<User>> = reactive([]);
 
 const fetchData = async () => {
