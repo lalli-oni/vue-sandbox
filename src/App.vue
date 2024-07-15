@@ -4,8 +4,9 @@ import axios from "axios";
 
 import { User } from "./types/user";
 
-const pageTitle = "Data Fetching Example";
-let isLoading = ref(false);
+const PAGE_TITLE = "Data Fetching Example";
+
+let isLoading: Ref<boolean> = ref(false);
 let data: Reactive<Array<User>> = reactive([]);
 
 const fetchData = async () => {
@@ -23,7 +24,7 @@ const fetchData = async () => {
 
 <template>
   <div>
-    <h1>{{ pageTitle }}</h1>
+    <h1>{{ PAGE_TITLE }}</h1>
     <button @click="fetchData">Fetch Data</button>
     <div v-if="isLoading">Loading...</div>
     <ul>
