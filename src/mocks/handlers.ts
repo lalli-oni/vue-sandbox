@@ -1,7 +1,7 @@
-import { http, HttpResponse } from 'msw'
+import { delay, http, HttpResponse } from 'msw'
  
 export const handlers = [
-  http.get('https://api.example.com/data', () => {
+  http.get('https://api.example.com/data', async () => {
 		const mockData = [{
 			id: 0,
 			name: 'Bob'
@@ -10,6 +10,8 @@ export const handlers = [
 			name: 'Frank'
 		}];
 
-    return HttpResponse.json(mockData)
+		await delay(2000);
+
+    return HttpResponse.json(mockData);
   }),
 ]
